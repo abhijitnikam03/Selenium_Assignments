@@ -1,19 +1,38 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="LambdaTest Parallel Suite" parallel="tests" thread-count="2">
-	 <test name="Edge">
-        <parameter name="browser" value="Firefox"/>
-        <classes>
-            <class name="lambdatest.com.assignment.Scenario_1"/>
-            <class name="lambdatest.com.assignment.Scenario_2"/>
-            <class name="lambdatest.com.assignment.Scenario_3"/>
-        </classes>
-    </test>	
-     <test name="Win10 Chrome Test">
-        <parameter name="browser" value="Chrome"/>
-        <classes>
-            <class name="lambdatest.com.assignment.Scenario_1"/>
-            <class name="lambdatest.com.assignment.Scenario_2"/>
-            <class name="lambdatest.com.assignment.Scenario_3"/>
-        </classes>
-    </test>
-</suite>
+# Gitpod configuration for LambdaTest TestNG Assignment
+
+# 1. Base Image: Use a standard image that includes Java and Maven
+image: gitpod/workspace-java-17
+
+# 2. Workspace Setup (Tasks)
+tasks:
+  - name: Setup and Build
+    # Commands to run before the terminal starts.
+    init: |
+      echo "--- Setting up Maven and Java environment ---"
+      # Perform an initial clean install to download dependencies and compile code
+      mvn clean install -DskipTests
+      echo "--- Initial build complete. Dependencies ready. ---"
+      
+    # Commands to run when the environment is ready (post-setup)
+    command: |
+      echo "=========================================================="
+      echo " Gitpod Environment is Ready."
+      echo "Your TestNG suite is configured to run parallel tests on the"
+      echo "LambdaTest Cloud Selenium Grid (Chrome/Firefox)."
+      echo "----------------------------------------------------------"
+      
+      # Display instructions for the user
+      echo " CRITICAL: Ensure you have set the LT_USERNAME and LT_ACCESS_KEY"
+      echo "variables in your Gitpod settings."
+      
+      echo "To run the full parallel test suite, execute the following command:"
+      echo "   mvn clean test"
+      echo "----------------------------------------------------------"
+      echo "Note: The console output will include the 6 required unique Final Test ID(s)."
+      echo "=========================================================="
+
+# 3. Port Configuration (Not strictly necessary, but standard practice)
+ports:
+  # Ignores any default ports that might be opened by the Java process
+  - port: 8080
+    onOpen: ignore
