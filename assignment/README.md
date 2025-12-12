@@ -27,9 +27,9 @@ Since this assignment uses the LambdaTest Cloud Grid, you must provide your cred
 3.  Navigate to the **Variables** section.
 4.  Add the following two variables, scoped to your repository:
     * **Name:** `LT_USERNAME`
-    * **Value:** Your LambdaTest Username (email address)
+    * **Value:** abhijitnikam03
     * **Name:** `LT_ACCESS_KEY`
-    * **Value:** Your LambdaTest Access Key
+    * **Value:** LT_hKl7qpVCxBvfH4Ubfcoglfydny0YCEimN8cYrptmS3ZcLxR
 
 5.  Restart the Gitpod workspace.
 
