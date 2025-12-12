@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="methods" name="Failed suite [LambdaTest Parallel Slider Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="methods" name="Firefox(failed)">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="lambdatest.com.assignment.Scenario_1">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="verifySimpleFormMessage"/>
+        </methods>
+      </class> <!-- lambdatest.com.assignment.Scenario_1 -->
+    </classes>
+  </test> <!-- Firefox(failed) -->
+</suite> <!-- Failed suite [LambdaTest Parallel Slider Suite] -->
